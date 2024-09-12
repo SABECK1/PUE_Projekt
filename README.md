@@ -1,5 +1,10 @@
 # PUE_Projekt
 PUE BBS Einbeck
+# How to Start
+1. Projektordner bei XAMPP in den HTDOCS-Ordner (am besten direkt reinklonen) 
+1. Terminal in Projektordner "PHP ARTISAN MIGRATE" zum Erstellen der Datenbank ausführen 
+1. "PHP ARTISAN SERVE" Zum Starten des Servers 
+1. Je nach Konfiguration (Standard) unter Localhost zu erreichen.
 
 # Aufgabenverteilung
 Frontend - Juri Jonas
