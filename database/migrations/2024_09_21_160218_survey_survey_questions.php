@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('survey_survey_questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('survey_id')->constrained();
-            $table->foreignId('surveyquestion_id')->constrained();
+            $table->foreignIdFor(\App\Models\Questionnaire::class);
+            $table->foreignIdFor(\App\Models\SurveyQuestion::class);
         });
     }
 
