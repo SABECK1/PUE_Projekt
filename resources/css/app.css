@@ -4,7 +4,7 @@
 
 /* Table pagination: active page highlight */
 .mary-table-pagination span[aria-current="page"] > span {
-    @apply bg-primary text-base-100
+    @apply bg-primary-content text-base-100
 }
 
 /* Table pagination: for dark mode*/
