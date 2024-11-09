@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+
+import daisyui from "daisyui";
 export default {
     content: [
         // You will probably also need these lines
+        './storage/framework/views/*.php',
         "./resources/**/**/*.blade.php",
         "./resources/**/**/*.js",
         "./app/View/Components/**/**/*.php",
@@ -16,7 +19,7 @@ export default {
     darkMode: 'class',
 
     // Add daisyUI
-    plugins: [require("daisyui")],
+    plugins: [daisyui],
 
     daisyui: {
         themes: ["light", "dark"],
