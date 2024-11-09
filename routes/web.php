@@ -23,13 +23,24 @@ Route::get('/', function () {
     return view('showSurveys', ['surveys' => $surveys]);
 })->name('showSurveys');
 
-Route::get('/data', function () {
+Route::get('/show/data', function () {
     return view('showSurveyData');
 })->name('showSurveyData');
 
+
 Route::get('/evaluateSurveys', function () {
-    return view('evaluateSurveys');
+    $surveys = [
+        ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
+        ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
+        ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
+    ];
+    return view('evaluateSurveys', ['surveys' => $surveys]);
 })->name('evaluateSurveys');
+
+Route::get('/evaluate/data', function () {
+    return view('evaluateSurveyData');
+})->name('evaluateSurveyData');
+
 
 Route::get('/createSurveys', function () {
     return view('createSurveys');

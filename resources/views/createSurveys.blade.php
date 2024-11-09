@@ -2,7 +2,7 @@
 
 @section('content')
     <x-form wire:submit="save">
-        <x-header title="Umfrage erstellen" subtitle="Neue Umfrage eröffnen" separator/>
+        <x-header title="Umfrage erstellen"  separator/>
 
 
 
