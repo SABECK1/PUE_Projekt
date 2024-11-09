@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+    <x-header title="Umfragen anzeigen"  separator/>
     @foreach($surveys as $survey)
         <x-list-item :item="$survey">
             <x-slot:avatar>
