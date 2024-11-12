@@ -2,9 +2,9 @@
 @extends('layout')
 
 @section('content')
-<div class="min-h-screen bg-gray-100 p-6">
+<div class="min-h-screen bg-gray-100 p-6 scroll-smooth overflow-y-auto">
     <!-- Sidebar -->
-    <aside collapsible class="w-64 h-full bg-white fixed shadow-md">
+    <!--<aside collapsible class="w-64 h-full bg-white fixed shadow-md">
         <div class="p-6">
             <div class="text-yellow-500 text-2xl font-semibold">PUE</div>
             <div class="my-4 flex items-center space-x-4">
@@ -15,22 +15,22 @@
                 <a href="{{ route('showSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Show Surveys</a>
                 <a href="{{route('createSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Create Surveys</a>
                 <a href="{{ route('evaluateSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Evaluate Surveys</a>
-                <!--<div class="mt-4">
+                <div class="mt-4">
                     <span class="block py-2 px-4 text-gray-600">Warehouse</span>
                     <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100">Option 1</a>
                     <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100">Option 2</a>
-                </div>-->
+                </div>
             </nav>
             <div class="mt-6">
                 <input type="text" placeholder="Search" class="w-full py-2 px-4 border rounded-md">
             </div>
         </div>
-    </aside>
+    </aside>-->
 
     <!-- Main Content -->
-    <div class="ml-72 p-6">
+    <div class="p-6">
         <!-- Overview Cards -->
-        <div class="grid grid-cols-4 gap-6 mt-6">
+        <div class="grid lg:grid-cols-4 gap-6 lg:gap-8 mt-6">
             <div class="bg-white p-6 rounded-lg shadow-md flex items-center ">
                 <div class="flex items-center justify-center">      
                     <svg class="text-gray-500 h-9 w-9 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,23 +43,12 @@
                     </div>
                 </div>                
             </div>
-            <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl col-span-2">
-                <div class="md:flex">
-                    <div class="md:shrink-0">
-                        <img class="h-48 w-full object-cover md:h-full md:w-48" src="/images/Test.png" alt="Modern building architecture">
-                    </div>
-                    <div class="p-8">
-                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Company retreats</div>
-                        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Incredible accommodation for your team</a>
-                        <p class="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p>
-                    </div>
-                </div>
-            </div>
+            
             <!-- More cards here for Orders, New Customers, etc. -->
         </div>
 
         <!-- Charts and Lists -->
-        <div class="mt-6 grid grid-cols-3 gap-6">
+        <div class="mt-6 grid lg:grid-cols-3 gap-6 lg:gap-8">
             <!-- Gross Chart -->
             <div class="col-span-2 bg-white p-6 rounded-lg shadow-md">
                 <h2 class="text-xl font-semibold mb-4">Class comparison</h2>
@@ -106,7 +95,7 @@
         </div>
 
         <!-- Tables -->
-        <div class="mt-6 grid grid-cols-2 gap-6">
+        <div class="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8">
             <!-- Top Customers -->
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <h2 class="text-xl font-semibold mb-4">pleased classes</h2>

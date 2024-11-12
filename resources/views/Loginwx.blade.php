@@ -1,10 +1,15 @@
-@extends('layout')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="overflow-hidden h-screen">
 <div class="hero bg-yellow-100 min-h-screen flex justify-center">
   <div class="hero-content text-center w-96 mt-10">
     <div class="max-w-md">          
-            @if ($userRole == 2)
+        @if ($userRole == 2)
             <body class="flex items-center justify-center min-h-screen bg-gray-50">
                     <div class="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
                         <div class="flex flex-col items-center mb-8">
@@ -77,5 +82,5 @@
         </div>
 </div>
 </div>
-
-@endsection
+</body>
+</html>
