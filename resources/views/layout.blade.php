@@ -24,7 +24,7 @@
 </x-nav>
 
 <x-main with-nav full-width>
-    <x-slot:sidebar drawer="main-drawer"  class="bg-base-200 overscroll-none">
+    <x-slot:sidebar drawer="main-drawer"  class="bg-base-200">
         <x-menu activate-by-route>
             <x-menu-item title="Umfragen anzeigen" icon="c-rectangle-group" link="{{ route('showSurveys') }}"/>
             <x-menu-item title="Umfragen erstellen" icon="m-pencil" link="{{route('createSurveys') }}"/>

@@ -3,30 +3,6 @@
 
 @section('content')
 <div class="min-h-screen bg-gray-100 p-6 scroll-smooth overflow-y-auto">
-    <!-- Sidebar -->
-    <!--<aside collapsible class="w-64 h-full bg-white fixed shadow-md">
-        <div class="p-6">
-            <div class="text-yellow-500 text-2xl font-semibold">PUE</div>
-            <div class="my-4 flex items-center space-x-4">
-                <img class="w-10 h-10 rounded-full" src="profile-picture-url" alt="Profile Picture">
-                <div class="font-semibold">Name of Teacher???</div>
-            </div>
-            <nav class="mt-6">
-                <a href="{{ route('showSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Show Surveys</a>
-                <a href="{{route('createSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Create Surveys</a>
-                <a href="{{ route('evaluateSurveys') }}" class="block py-2 px-4 rounded hover:bg-gray-100">Evaluate Surveys</a>
-                <div class="mt-4">
-                    <span class="block py-2 px-4 text-gray-600">Warehouse</span>
-                    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100">Option 1</a>
-                    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100">Option 2</a>
-                </div>
-            </nav>
-            <div class="mt-6">
-                <input type="text" placeholder="Search" class="w-full py-2 px-4 border rounded-md">
-            </div>
-        </div>
-    </aside>-->
-
     <!-- Main Content -->
     <div class="p-6">
         <!-- Overview Cards -->
