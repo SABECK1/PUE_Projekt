@@ -15,6 +15,38 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('Loginwx');
+});
+
+Route::get('/code-eingabe', function () {
+    return view('code-eingabe');
+});
+
+Route::get('/emailLogin', function () {
+    return view('emailLogin');
+})->name('emailLogin');
+
+Route::get('/Loginwx', function () {
+    return view('Loginwx');
+})->name('Loginwx');
+
+Route::get('/evalutions', function () {
+    return view('evalutions');
+})->name('evalutions');
+
+Route::get('/user', function () {
+    return view('userPage');
+})->name('userPage');
+
+Route::get('/Home', function () {
+    return view('Home');
+})->name('Home');
+
+Route::get('/LehrerMain', function () {
+    return view('LehrerMain');
+})->name('LehrerMain');
+
+Route::get('showSurveys', function () {
     $surveys = [
         ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
         ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
