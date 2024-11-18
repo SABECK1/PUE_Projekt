@@ -5,7 +5,13 @@
 @php
 
         $icon = 'm-minus-small'; 
-        $value = rand(1, 10);
+        $anzahl = 4;
+        $ranNum = [];
+        for ($i = 0; $i < $anzahl; $i++) {
+            $ranNum[] = rand(1, 10);
+        }
+        
+        $value = $ranNum[0];
         if ($value > 5)
         {
             $icon = 'o-arrow-trending-up';
@@ -21,33 +27,33 @@
         <!-- Overview Cards -->
         <div class="grid lg:grid-cols-4 gap-6 lg:gap-8 mt-6 flex-wrap " >    
             <x-stat 
-            class="min-w-56 shadow-md"
-            id="L-Bewertng"
-            title="Deine gesamt Bewertung "
-            description="Seit Letzter Änderung"
-            value="{{$value}}"
-            icon="{{ $icon }}"/> 
+                class="min-w-56 shadow-md"
+                id="L-Bewertng"
+                title="Deine gesamt Bewertung "
+                description="Seit Letzter Änderung"
+                value="{{$value}}"
+                icon="{{ $icon }}"/> 
             <x-stat 
-            class="min-w-56 shadow-md"
-            id="L-Bertung"
-            title="Deine gesamt Bewertung"
-            description="Seit Letzter Änderung"
-            value="95"
-            icon="m-minus-small"/>  
+                class="min-w-56 shadow-md"
+                id="L-Bertung"
+                title="Anzahl Umfragen"
+                description="Bisher durchgefürt"
+                value="{{$ranNum[1]}}"
+                icon="o-document"/>  
             <x-stat 
-            class="min-w-56 shadow-md"
-            id="L-ertung"
-            title="Deine gesamt Bewertung"
-            description="Seit Letzter Änderung"
-            value="95"
-            icon="m-minus-small"/>  
+                class="min-w-56 shadow-md"
+                id="L-ertung"
+                title="Offene Umfragen"
+                description="Momentan"
+                value="{{$ranNum[2]}}"
+                icon="m-minus-small"/>  
             <x-stat 
-            class="min-w-56 shadow-md"
-            id="L-Bewert"
-            title="Deine gesamt Bewertung"
-            description="Seit Letzter Änderung"
-            value="95"
-            icon="m-minus-small"/>    
+                class="min-w-56 shadow-md"
+                id="L-Bewert"
+                title="Interresante statistik"
+                description="Für die Lehrkraft"
+                value="{{$ranNum[3]}}"
+                icon="s-cube-transparent"/>    
             <!-- würde das icon gerne variabel machen. Abhängig von der Richtung in der sich die Bewertung(Value) Ändert -->
             
             <!-- More cards here for Orders, New Customers, etc. -->
@@ -57,9 +63,9 @@
         <!-- Charts and Lists -->
         <div class="mt-6 grid lg:grid-cols-3 gap-6 lg:gap-8">
             <!-- Gross Chart -->
-            <x-card class="shadow-md col-span-2" title="Kassen vergleich" separator>
+            <x-card class="shadow-md col-span-2" title="Klassen vergleich" separator>
                 <div class="h-40 bg-purple-50 flex items-center ">
-                    <div class="relative h-40 ">
+                    <div class="relative h-40">
                         <canvas id="myChart" ></canvas>
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

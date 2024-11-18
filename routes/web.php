@@ -14,33 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/activeSurvey', function () {
+    return view('activeSurvey');
+})->name('activeSurvey');
+
 Route::get('/', function () {
-    return view('Loginwx');
-});
-
-Route::get('/code-eingabe', function () {
-    return view('code-eingabe');
-});
-
-Route::get('/emailLogin', function () {
-    return view('emailLogin');
-})->name('emailLogin');
-
-Route::get('/Loginwx', function () {
     return view('Loginwx');
 })->name('Loginwx');
 
-Route::get('/evalutions', function () {
-    return view('evalutions');
-})->name('evalutions');
-
-Route::get('/user', function () {
-    return view('userPage');
-})->name('userPage');
-
-Route::get('/Home', function () {
-    return view('Home');
-})->name('Home');
 
 Route::get('/LehrerMain', function () {
     $surveys = [

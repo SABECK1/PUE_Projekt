@@ -7,8 +7,8 @@
 </head>
 <body class="overflow-hidden h-screen">
 <div class="hero bg-yellow-100 min-h-screen flex justify-center">
-  <div class="hero-content text-center w-96 mt-10">
-    <div class="max-w-md">          
+  <div class="hero-content text-center w-96">
+        
         @if ($userRole == 2)
             <body class="flex items-center justify-center min-h-screen bg-gray-50">
                     <div class="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
@@ -17,12 +17,10 @@
                         </div>
                         <form action="{{ route('evaluateSurveys') }}">
                             <div class="mb-6">
-                                <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                                <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="random@random.com" required>
+                            <x-input type="email" label="E-mail" wire:model="email" class="border-black" required/>
                             </div>
                             <div class="mb-6">
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="********" required>
+                                <x-password label="Password" wire:model="password" only-password class="border-black" required/>
                             </div>
                             <button type="submit" class="w-full px-4 py-2 text-black bg-yellow-400 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-black-700 focus:ring-offset-2">
                                 Login
@@ -39,14 +37,14 @@
                         <div class="flex flex-col items-center mb-8">
                             <h1 class="text-3xl font-semibold text-black">Login</h1>
                         </div>
-                        <form action="{{ route('LehrerMain') }}">
+                        <form action="{{ route('LehrerMain') }}"><!-- Abfrage zur sich anmeldenden Lehrkraft-->
                             <div class="mb-6">
-                                <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                                <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="random@random.com" required>
+                                <!--<label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                                <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="random@random.com" required>-->
+                                <x-input type="email" label="E-mail" wire:model="email" class="border-black" required/>
                             </div>
                             <div class="mb-6">
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="********" required>
+                                <x-password label="Password" wire:model="password" only-password class="border-black" required/>
                             </div>
                             <button type="submit" class="w-full px-4 py-2 text-black bg-yellow-400 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-black-700 focus:ring-offset-2">
                                 Login
@@ -63,7 +61,7 @@
                         <div class="flex flex-col items-center mb-8">
                             <h1 class="text-3xl font-semibold text-black">Umfrage</h1>
                         </div>
-                        <form action="{{ route('userPage') }}">
+                        <form action="{{ route('activeSurvey') }}"><!--- Hier muss Später noch ein Filter nach dem eingegebenen Umfragecode implementiert werden-->
                             <div class="mb-6">
                                 <input type="text" id="number-field" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="Umfragecode" required>
                             </div>
@@ -80,7 +78,7 @@
             <!-- Login Formular -->
             
         </div>
-</div>
+
 </div>
 </body>
 </html>
