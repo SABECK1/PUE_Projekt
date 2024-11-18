@@ -18,8 +18,8 @@
         </a>
     </x-slot:brand>
     <x-slot:actions>
-        <x-button class="btn-circle" link="{{ route('Loginwx') }}" icon="m-arrow-left-on-rectangle" responsive/>
-        <x-button class="btn-circle"  link="{{ route('userPage') }}" icon="o-user"/>
+        <x-button class="btn-circle" link="{{ route('Loginwx') }}" icon="m-arrow-left-on-rectangle" tooltip-bottom="Logout" responsive/>
+        <x-button class="btn-circle"  link="{{ route('userPage') }}" icon="o-user" tooltip-bottom="User"/>
     </x-slot:actions>
 </x-nav>
 

@@ -43,7 +43,12 @@ Route::get('/Home', function () {
 })->name('Home');
 
 Route::get('/LehrerMain', function () {
-    return view('LehrerMain');
+    $surveys = [
+        ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
+        ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
+        ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
+    ];
+    return view('LehrerMain', ['surveys' => $surveys]);
 })->name('LehrerMain');
 
 Route::get('showSurveys', function () {
