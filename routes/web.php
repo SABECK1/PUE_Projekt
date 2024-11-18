@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/activeSurvey', function () {
     return view('activeSurvey');
 })->name('activeSurvey');

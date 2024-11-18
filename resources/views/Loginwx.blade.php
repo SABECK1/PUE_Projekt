@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </body>
-            @elseif ($userRole == 1)
+            @elseif ($userRole == 3)
                 <body class="flex items-center justify-center min-h-screen bg-gray-50 ">
                     <div class="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
                         <div class="flex flex-col items-center mb-8">
@@ -61,10 +61,10 @@
                         <div class="flex flex-col items-center mb-8">
                             <h1 class="text-3xl font-semibold text-black">Umfrage</h1>
                         </div>
-                        <form action="{{ route('activeSurvey') }}"><!--- Hier muss Später noch ein Filter nach dem eingegebenen Umfragecode implementiert werden-->
+                        <form method="GET" action="{{ route('activeSurvey') }}"><!--- Hier muss Später noch ein Filter nach dem eingegebenen Umfragecode implementiert werden-->
                             <div class="mb-6">
-                                <input type="text" id="number-field" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="Umfragecode" required>
-                            </div>
+                                <input name="Umfrage" type="text" id="numberfield" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500" placeholder="Umfragecode" required>
+                            </div :item ="numberfield">
                             <button type="submit" class="w-full px-4 py-2 text-black bg-yellow-400 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-black-700 focus:ring-offset-2">
                                 Start
                             </button>
