@@ -54,7 +54,6 @@
                 description="Für die Lehrkraft"
                 value="{{$ranNum[3]}}"
                 icon=""/>    
-            <!-- würde das icon gerne variabel machen. Abhängig von der Richtung in der sich die Bewertung(Value) Ändert -->
             
             <!-- More cards here for Orders, New Customers, etc. -->
         </div>
