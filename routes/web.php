@@ -69,3 +69,11 @@ Route::get('/createSurveys', function () {
 Route::get('/user', function () {
     return view('userPage');
 })->name('userPage');
+
+Route::get('/Admin', function () {
+    return view('Admin');
+})->name('Admin');
+
+Route::get('/Personaler', function () {
+    return view('Personaler');
+})->name('Personaler');
