@@ -6,19 +6,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 @php
-    $link = 'a';
-    switch ($userRole){
-        case '1':
-            $link = 'LehrerMain';
-            break;
-        case '2':
-            $link = 'Personaler';
-            break;
-        case '3':
-            $link = 'Admin';
-            break;
-        default:
-    }
+    include_once resource_path('helpers/diffRoleAction.php');
+    $link = getLinkByUserRole($userRole);
 @endphp
 <body class="overflow-hidden h-screen">
 <div class="hero bg-yellow-100 min-h-screen flex justify-center">
