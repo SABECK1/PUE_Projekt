@@ -36,7 +36,7 @@
             @if ($userRole == 3)
                 <x-menu-sub title="Einstellungen" icon="o-cog-6-tooth">
                     <x-menu-item title="Benutzer-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
-                    <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
+                    <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('questionnaire') }}"/>
                 </x-menu-sub>
             @endif
         </x-menu>

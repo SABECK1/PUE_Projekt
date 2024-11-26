@@ -20,6 +20,10 @@ Route::get('/activeSurvey', function () {
     return view('activeSurvey');
 })->name('activeSurvey');
 
+Route::get('/questionnaire', function () {
+    return view('questionnaire');
+})->name('questionnaire');
+
 Route::get('/', function () {
     return view('Loginwx');
 })->name('Loginwx');
