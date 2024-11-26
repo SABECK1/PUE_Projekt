@@ -22,7 +22,7 @@
 
 @endphp
 <img src="{{ asset('Lehrer_Banner.png') }}" class="rounded-t-lg"/>
-<div class="min-h-screen bg-gray-100 p-6 scroll-smooth overflow-y-auto">
+<div class="min-h-screen bg-gray-100 p-3 scroll-smooth overflow-y-auto">
     <!-- Main Content -->
     <div class="p-6" >
         <!-- Overview Cards -->
@@ -64,8 +64,8 @@
         <div class="mt-6 grid lg:grid-cols-3 gap-6 lg:gap-8">
             <!-- Gross Chart -->
             <x-card class="shadow-md col-span-2" title="Klassen vergleich" separator>
-                <div class="h-40 bg-purple-50 flex items-center ">
-                    <div class="relative h-40">
+                <div class="h-40 bg-purple-50">
+                    <div class=" h-40">
                         <canvas id="myChart" ></canvas>
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -79,10 +79,12 @@
                             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                             datasets: [{
                                 data: [12, 19, 3, 5, 2, 3],
-                                borderWidth: 1
+                                borderWidth: 2
                             }]
                             },
-                            options: {                              
+                            options: {  
+                                responsive: true,        
+                                maintainAspectRatio: false,                    
                             scales: {
                                 y: {
                                 beginAtZero: true  
@@ -98,7 +100,7 @@
             </x-card>
 
             <!-- Category Chart -->
-            <x-card class="shadow-md" title="Schwerpunkte" separator>
+            <x-card class="shadow-md w-full" title="Schwerpunkte" separator>
                 <!-- Placeholder for Pie Chart -->  
                  <div class="h-40"></div>
             </x-card>
