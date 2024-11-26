@@ -21,6 +21,7 @@
         }
 
 @endphp
+<img src="{{ asset('Lehrer_Banner.png') }}" class="rounded-t-lg"/> {{--  QRCode--}}
 <div class="min-h-screen bg-gray-100 p-6 scroll-smooth overflow-y-auto">
     <!-- Main Content -->
     <div class="p-6" >
