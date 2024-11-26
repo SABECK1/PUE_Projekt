@@ -30,4 +30,5 @@
 
         </x-card>
     @endif
+    <x-button label="Als PDF drucken" class="btn-warning mx-10" icon="o-check" disabled />
 @endsection

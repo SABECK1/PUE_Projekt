@@ -43,8 +43,8 @@
         </div>
         
         <x-slot:actions>
-            <x-button label="Abbrechen" type="cancel"/>
-            <x-button label="Erstellen" type="submit"/>
+            <x-button label="Abbrechen" type="cancel" icon-right="o-x-circle"/>
+            <x-button label="Erstellen" type="submit" icon="o-check"/>
         </x-slot:actions>
 
     </x-form>

@@ -35,4 +35,4 @@
     </x-card>
 @endforeach
 
-<x-button label="Abschließen" class="btn-warning mx-10" disabled /><!-- Soll erst mit der Beantwortung aller pflicht Fragen der Umfrage Freigeschaltet werden. Logic ist noch zu imlementieren.-->
+<x-button label="Abschließen" class="btn-warning mx-10" icon="o-check" disabled /><!-- Soll erst mit der Beantwortung aller pflicht Fragen der Umfrage Freigeschaltet werden. Logic ist noch zu imlementieren.-->

@@ -17,6 +17,6 @@
         <input type="radio" value="1" name="fragen" required>Radiobuttons</input> <br>
         <input type="radio" value="2" name="fragen" required>Radiobuttons mit Angabe von - bis</input>         
 </x-card>
-<x-button type="submit" label="create" class="btn-outline"/>
+<x-button type="submit" label="create" class="btn-outline" icon="o-check"/>
 
 @endsection
