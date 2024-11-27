@@ -14,7 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::get('/activeSurvey', function () {
+    return view('activeSurvey');
+})->name('activeSurvey');
+
+Route::get('/questionnaire', function () {
+    return view('questionnaire');
+})->name('questionnaire');
+
 Route::get('/', function () {
+    return view('Loginwx');
+})->name('Loginwx');
+
+
+Route::get('/LehrerMain', function () {
+    $surveys = [
+        ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
+        ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
+        ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
+    ];
+    return view('LehrerMain', ['surveys' => $surveys]);
+})->name('LehrerMain');
+
+Route::get('showSurveys', function () {
     $surveys = [
         ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
         ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
@@ -49,3 +73,11 @@ Route::get('/createSurveys', function () {
 Route::get('/user', function () {
     return view('userPage');
 })->name('userPage');
+
+Route::get('/Admin', function () {
+    return view('Admin');
+})->name('Admin');
+
+Route::get('/Personaler', function () {
+    return view('Personaler');
+})->name('Personaler');
