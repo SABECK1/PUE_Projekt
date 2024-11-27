@@ -30,7 +30,7 @@
                 <!--Die Frage.  event. {{-- $survey['frageInhalt'] --}}-->
                 ############## ############ ####### ######## ########## ########### ################ ####### ################
             </div>      
-            <x-radio label="Select one" :options="$Answers" wire:model="selectedUser{{ $answer['id'] }}" class=" w-12 mx-2 text-xs col-span-1"/><!-- Answer[id] durch id der Frage tauschen. event. {{-- $survey['id'] --}} oder hier direkt die zu der Frage hinterlegten antw. mögl. angeben-->
+            <x-radio label="Select one" :options="$Answers" wire:model="selectedUser{{ $answer['id'] }}" class=" w-12 mx-2 text-xs col-span-1 btn-warning "/><!-- Answer[id] durch id der Frage tauschen. event. {{-- $survey['id'] --}} oder hier direkt die zu der Frage hinterlegten antw. mögl. angeben-->
         </div>
     </x-card>
 @endforeach

@@ -24,7 +24,7 @@ function calculateBewertungColour($value)//Übergabe der zur berechnung benötig
     // Farbbedingungen basierend auf dem Ergebnis wert der Antworten
     if (0 <= $value && $value < 33) {
         return 'progress-error';
-    } elseif (33 <= $value && $value < 66) {
+    } elseif (33 < $value && $value < 66) {
         return 'progress-warning';
     } else {
         return 'progress-success';

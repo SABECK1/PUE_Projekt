@@ -8,5 +8,10 @@
         <img src="{{ asset('Admin_Banner.png') }}" />
     </x-slot:figure>
 </x-card>
+<x-card title="Userliste Erstellen" shadow>
+    <x-slot:actions>
+        <x-button label="create" icon="s-plus" class=" btn-warning" />
+    </x-slot:actions>
+</x-card>
 
 @endsection

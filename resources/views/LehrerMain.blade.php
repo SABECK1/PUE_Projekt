@@ -101,8 +101,9 @@
 
             <!-- Category Chart -->
             <x-card class="shadow-md w-full" title="Schwerpunkte" separator>
-                <!-- Placeholder for Pie Chart -->  
-                 <div class="h-40"></div>
+                <div class="h-40">
+                    <!-- Placeholder for Pie Chart -->  
+                </div>
             </x-card>
         </div>
 
