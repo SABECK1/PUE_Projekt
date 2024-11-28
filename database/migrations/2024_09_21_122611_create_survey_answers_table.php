@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surveyanswers', function (Blueprint $table) {
+        Schema::create('survey_answers', function (Blueprint $table) {
             $table->id();
             $table->integer('chosen_answer');
             $table->foreignIdFor(Survey::class);
