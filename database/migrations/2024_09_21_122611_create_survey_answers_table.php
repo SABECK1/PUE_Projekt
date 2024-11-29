@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('survey_answers', function (Blueprint $table) {
             $table->id();
             $table->integer('chosen_answer');
-            $table->foreignIdFor(Survey::class);
+            $table->foreignIdFor(Survey::class)->constrained();
             $table->foreignIdFor(SurveyQuestion::class);
             $table->timestamps();
         });

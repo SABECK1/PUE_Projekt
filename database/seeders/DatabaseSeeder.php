@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         Role::factory()->create();
         User::factory(30)->create();
-        Questionnaire::factory(30)->create();
+        Survey::factory(30)->create();
         SurveySurveyQuestion::factory(30)->create();
         SurveyAnswer::factory(500)->create();
     }
