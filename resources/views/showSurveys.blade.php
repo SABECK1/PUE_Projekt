@@ -8,7 +8,7 @@
                 <x-badge value=" {{ $survey['status'] }}" class="badge-primary"/>
             </x-slot:avatar>
             <x-slot:value>
-                {{ $survey['surveycode']." - ".$survey['school_class_id'] }}
+                {{ $survey['surveycode']." - ".$survey->school_class->name }}
             </x-slot:value>
 
             <x-slot:sub-value>
