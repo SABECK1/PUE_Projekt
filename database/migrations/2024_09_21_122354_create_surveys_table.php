@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('surveycode');
             $table->foreignIdFor(\App\Models\SchoolClass::class);
             $table->foreignIdFor(\App\Models\Questionnaire::class);
-            $table->boolean('finished')->default(false);
-            $table->boolean('viewable')->default(false);
+            $table->string('status');
             $table->timestamps();
         });
     }

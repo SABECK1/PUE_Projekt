@@ -21,7 +21,7 @@ Route::get('/show/survey', [PagesController::class, 'showSurvey'])->name('showSu
 Route::get('/evaluateSurveys', [PagesController::class, 'evaluateSurveys'])->name('evaluateSurveys');
 Route::get('/evaluateSurvey', [PagesController::class, 'evaluateSurvey'])->name('evaluateSurvey');
 Route::get('/evaluate/data', [PagesController::class, 'evaluateSurveyData'])->name('evaluateSurveyData');
-Route::get('/createSurvey', [PagesController::class, 'createSurvey'])->name('createSurvey');
-Route::get('/user', [PagesController::class, 'showUser'])->name('showUser');
+Route::get('/createSurvey', [PagesController::class, 'createSurveys'])->name('createSurveys');
+Route::get('/user', [PagesController::class, 'showUser'])->name('userPage');
 
 

@@ -8,10 +8,11 @@
                 <x-badge value=" {{ $survey['status'] }}" class="badge-primary"/>
             </x-slot:avatar>
             <x-slot:value>
-                {{ $survey['class'] }}
+                {{ $survey['surveycode']." - ".$survey['school_class_id'] }}
             </x-slot:value>
+
             <x-slot:sub-value>
-                {{ $survey['date'] }}
+                {{ $survey['created_at'] }}
             </x-slot:sub-value>
             <x-slot:actions>
                 <x-button icon="c-arrow-turn-right-up" class="text-red-500"
