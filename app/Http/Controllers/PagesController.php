@@ -36,9 +36,13 @@ class PagesController extends Controller
     public function evaluateSurveyData(Survey $survey) {
 
         $questionnaire = $survey->questionnaire()->with('questions')->first();
+        $questions = $questionnaire->questions()->with('answers')->get();
 
-        dd($questionnaire->questions);
-        return view('evaluateSurveyData', ['survey' => $survey, 'questions' => $questions, 'answers' => $answers]);
+
+        return view('evaluateSurveyData', ['survey' => $survey,
+                                                'questionnaire' => $questionnaire,
+                                                'questions' => $questions,
+                                                'answers' => $answers,]);
     }
 
     public function createSurveys() {

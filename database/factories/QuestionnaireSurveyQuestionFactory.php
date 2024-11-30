@@ -18,7 +18,7 @@ class QuestionnaireSurveyQuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            'questionnaire_id' => $this->faker->numberBetween(1, 30),
+            'questionnaire_id' => $this->faker->numberBetween(1, 2),
             'survey_question_id' => SurveyQuestion::factory(),
         ];
     }
