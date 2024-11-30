@@ -1,14 +1,13 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\SurveyQuestion;
-use App\Models\Questionnaire;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class SurveySurveyQuestionFactory extends Factory
+class DepartmentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class SurveySurveyQuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            'questionnaire_id' => $this->faker->numberBetween(1, 30),
-            'survey_question_id' => SurveyQuestion::factory(),
+            'name' => $this->faker->company,
         ];
     }
 }

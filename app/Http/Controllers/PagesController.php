@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Questionnaire;
 use App\Models\SchoolClass;
 use App\Models\Survey;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -31,14 +34,26 @@ class PagesController extends Controller
     }
 
     public function evaluateSurveyData(Survey $survey) {
-        return view('evaluateSurveyData');
+
+        $questionnaire = $survey->questionnaire()->with('questions')->first();
+
+        dd($questionnaire->questions);
+        return view('evaluateSurveyData', ['survey' => $survey, 'questions' => $questions, 'answers' => $answers]);
     }
 
     public function createSurveys() {
-        return view('createSurveys');
+        return view('createSurveys', ['classes' => SchoolClass::all()]);
     }
 
     public function showUser() {
-        return view('userPage');
+        return view('userPage'. ['user' => Auth::user()]);
+    }
+
+    public function showUsers() {
+        return view('allUsers', ['users' => User::all()]);
+    }
+
+    public function dashboard() {
+        return view('dashboard');
     }
 }

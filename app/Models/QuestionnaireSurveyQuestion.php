@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\belongsToMany;
 
-class Questionnaire extends Model
+class QuestionnaireSurveyQuestion extends Model
 {
     use HasFactory;
-    public function questions(): belongsToMany {
-        return $this->belongsToMany(SurveyQuestion::class);
-    }
+    //Sonst nimmt er immer den Plural-Namen (?)
+    protected $table = 'questionnaire_survey_question';
+    public $timestamps = false;
 }

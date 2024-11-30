@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('survey_survey_questions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(\App\Models\Questionnaire::class);
-            $table->foreignIdFor(\App\Models\SurveyQuestion::class);
+        Schema::create('questionnaire_survey_question', function (Blueprint $table) {
+            $table->foreignIdFor(\App\Models\Questionnaire::class)->constrained();
+            $table->foreignIdFor(\App\Models\SurveyQuestion::class)->constrained();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('questionnaire_survey_question');
     }
 };

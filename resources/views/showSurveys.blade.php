@@ -16,8 +16,8 @@
             </x-slot:sub-value>
             <x-slot:actions>
                 <x-button icon="c-arrow-turn-right-up" class="text-red-500"
-                          link="{{ route('showSurveyData', [
-                              'survey' => urlencode(json_encode($survey)) // Serialize and URL encode the survey
+                          link="{{ route('evaluateSurveyData', [
+                              'survey' => $survey
                           ]) }}" />
             </x-slot:actions>
         </x-list-item>
