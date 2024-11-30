@@ -26,10 +26,10 @@
     @foreach($surveys as $survey)
     <x-list-item :item="$survey">
         <x-slot:value>
-            {{ $survey['class'] }}
+            {{ $survey['surveycode']." - ".$survey->school_class->name }}
         </x-slot:value>
         <x-slot:sub-value>
-            {{ $survey['date'] }}
+            {{ $survey['created_at'] }}
         </x-slot:sub-value>
         <x-slot:actions>
             <x-button icon="c-arrow-turn-right-up" class="text-red-500"

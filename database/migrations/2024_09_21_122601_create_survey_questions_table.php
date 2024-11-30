@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surveyquestions', function (Blueprint $table) {
+        Schema::create('survey_questions', function (Blueprint $table) {
             $table->id();
             $table->string('question');
             $table->string('left_side_text');

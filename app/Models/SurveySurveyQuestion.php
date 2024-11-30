@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Questionnaire extends Model
+class SurveySurveyQuestion extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 }
