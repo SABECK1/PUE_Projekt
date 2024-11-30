@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Questionnaire;
 use App\Models\SchoolClass;
 use App\Models\Survey;
+use App\Models\SurveyQuestion;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,5 +58,11 @@ class PagesController extends Controller
 
     public function dashboard() {
         return view('dashboard');
+    }
+
+    public function questionnaire() {
+        $questionnaires = Questionnaire::with('questions')->get();
+        $questions = SurveyQuestion::all();
+        return view('questionnaire', ['questionnaires' => $questionnaires, 'questions' => $questions]);
     }
 }
