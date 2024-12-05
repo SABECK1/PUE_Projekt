@@ -25,8 +25,12 @@ Route::get('/evaluateSurveys', [PagesController::class, 'evaluateSurveys'])->nam
 Route::get('/evaluateSurvey', [PagesController::class, 'evaluateSurvey'])->name('evaluateSurvey');
 Route::get('/evaluate/data{survey}', [PagesController::class, 'evaluateSurveyData'])->name('evaluateSurveyData');
 Route::get('/createSurvey', [PagesController::class, 'createSurveys'])->name('createSurveys');
-Route::get('/user', [PagesController::class, 'showUser'])->middleware('auth')->name('userPage');
-Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->middleware('auth')->name('userPage');
+//Route::get('/user', [PagesController::class, 'showUser'])->middleware('auth')->name('userPage');
+//Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->middleware('auth')->name('userPage');
+
+//Zum Testen ohne Auth
+Route::get('/user', [PagesController::class, 'showUser'])->name('userPage');
+Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->name('userPage');
 
 
 

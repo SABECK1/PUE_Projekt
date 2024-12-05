@@ -1,2 +1,5 @@
-<?php
-echo 'This will be the page to show all users!';
+@extends('layout')
+
+@section('content')
+        <livewire:c-s-v-upload></livewire:c-s-v-upload>
+@endsection
