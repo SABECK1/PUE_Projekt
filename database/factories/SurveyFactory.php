@@ -23,8 +23,7 @@ class SurveyFactory extends Factory
             'surveycode' => $this->faker->unique()->bothify('SURV-####'),
             'school_class_id' => SchoolClass::factory(),
             'questionnaire_id' => Questionnaire::factory(),
-            'finished' => $this->faker->boolean,
-            'viewable' => $this->faker->boolean,
+            'status' => $this->faker->randomElement(['open', 'closed']),
         ];
     }
 }

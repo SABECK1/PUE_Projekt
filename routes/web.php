@@ -1,8 +1,10 @@
 <?php
 
 use App\Livewire\Welcome;
+use App\Models\Survey;
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\PagesController;
+use \App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,38 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $surveys = [
-        ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
-        ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
-        ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
-    ];
-    return view('showSurveys', ['surveys' => $surveys]);
-})->name('showSurveys');
 
-Route::get('/show/data', function () {
-    return view('showSurveyData');
-})->name('showSurveyData');
-
-
-Route::get('/evaluateSurveys', function () {
-    $surveys = [
-        ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
-        ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
-        ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
-    ];
-    return view('evaluateSurveys', ['surveys' => $surveys]);
-})->name('evaluateSurveys');
-
-Route::get('/evaluate/data', function () {
-    return view('evaluateSurveyData');
-})->name('evaluateSurveyData');
+//Webroutes
+Route::get('/', [PagesController::class, 'showSurveys'])->name('showSurveys');
+Route::get('/show/data', [PagesController::class, 'showSurveyData'])->name('showSurveyData');
+Route::get('/show/survey', [PagesController::class, 'showSurvey'])->name('showSurvey');
+Route::get('/evaluateSurveys', [PagesController::class, 'evaluateSurveys'])->name('evaluateSurveys');
+Route::get('/evaluateSurvey', [PagesController::class, 'evaluateSurvey'])->name('evaluateSurvey');
+Route::get('/evaluate/data{survey}', [PagesController::class, 'evaluateSurveyData'])->name('evaluateSurveyData');
+Route::get('/createSurvey', [PagesController::class, 'createSurveys'])->name('createSurveys');
+Route::get('/user', [PagesController::class, 'showUser'])->middleware('auth')->name('userPage');
+Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->middleware('auth')->name('userPage');
 
 
-Route::get('/createSurveys', function () {
-    return view('createSurveys');
-})->name('createSurveys');
 
-Route::get('/user', function () {
-    return view('userPage');
-})->name('userPage');
+//Authentication
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
+
+

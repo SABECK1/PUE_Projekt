@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class SurveySurveyQuestionFactory extends Factory
+class QuestionnaireSurveyQuestionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class SurveySurveyQuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            'questionnaire_id' => $this->faker->numberBetween(1, 30),
+            'questionnaire_id' => $this->faker->numberBetween(1, 2),
             'survey_question_id' => SurveyQuestion::factory(),
         ];
     }
