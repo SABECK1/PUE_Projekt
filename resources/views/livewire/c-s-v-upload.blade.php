@@ -2,7 +2,7 @@
     <x-form wire:submit="save">
         <x-header title="Massenerstellung der Nutzer"  separator/>
 
-        <x-file wire:model="file" label="CSV-Datei" hint="Zeilenstruktur: Nachname, Vorname, Mail" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+        <x-file wire:model="file" label="CSV-Datei" hint="Zeilenstruktur: Nachname, Vorname, Mail" accept=".xlsx, .xls, .csv" />
 
 
         <x-slot:actions>
@@ -12,8 +12,6 @@
     </x-form>
 
     @php
-        $users = App\Models\User::get();
-
         $headers = [
             ['key' => 'id', 'label' => '#'],
             ['key' => 'nachname', 'label' => 'Vorname'],
@@ -21,6 +19,8 @@
         ];
     @endphp
 
-    {{-- You can use any `$wire.METHOD` on `@row-click` --}}
-    <x-table :headers="$headers" :rows="$users" striped @row-click="alert($event.detail.name)" />
+    @if($users and !$table_hidden)
+{{--        {{dd($users)}}--}}
+        <x-table :headers="$headers" :rows="$users" with-pagination />
+    @endif
 </div>
