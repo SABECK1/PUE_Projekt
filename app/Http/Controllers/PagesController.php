@@ -14,7 +14,7 @@ class PagesController extends Controller
 {
     public function showSurveys() {
         $surveys = Survey::with('school_class')->get();
-        return view('showSurveys', ['surveys' => $surveys]);
+        return view('showSurveys', ['surveys' => $surveys, 'user' => Auth::user()]);
     }
 
     public function showSurveyData() {
@@ -22,16 +22,16 @@ class PagesController extends Controller
     }
 
     public function showSurvey(Survey $survey) {
-        return view('survey', ['survey' => $survey]);
+        return view('survey', ['survey' => $survey, 'user' => Auth::user()]);
     }
 
     public function evaluateSurveys() {
         $surveys = Survey::all();
-        return view('evaluateSurveys', ['surveys' => $surveys]);
+        return view('evaluateSurveys', ['surveys' => $surveys, 'user' => Auth::user()]);
     }
 
     public function evaluateSurvey(Survey $survey) {
-        return view('evaluateSurvey', ['survey' => $survey]);
+        return view('evaluateSurvey', ['survey' => $survey, 'user' => Auth::user()]);
     }
 
     public function evaluateSurveyData(Survey $survey) {
@@ -41,19 +41,20 @@ class PagesController extends Controller
 //        $answers = $questions->answers()->get();
         return view('evaluateSurveyData', ['survey' => $survey,
                                                 'questionnaire' => $questionnaire,
-                                                'questions' => $questions]);
+                                                'questions' => $questions,
+                                                'user' => Auth::user()]);
     }
 
     public function createSurveys() {
-        return view('createSurveys', ['classes' => SchoolClass::all()]);
+        return view('createSurveys', ['classes' => SchoolClass::all(), 'user' => Auth::user()]);
     }
 
     public function showUser() {
-        return view('userPage'. ['user' => Auth::user()]);
+        return view('userPage', ['user' => Auth::user()]);
     }
 
     public function showUsers() {
-        return view('allUsers', ['users' => User::all()]);
+        return view('allUsers', ['users' => User::all(), 'user' => Auth::user()]);
     }
 
     public function dashboard() {

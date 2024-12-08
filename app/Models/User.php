@@ -14,15 +14,18 @@ class User extends Authenticatable
     /**
      * "The attributes that are mass assignable."
      * Dies sind die Attribute des Users, welche durch Massenpflege editiert werden können.
-     * Heißt: Wenn ich ein Modify auf die Datenbanktabelle machen möchte, dann müssen die Attribute die ich verändern möchte
+     * Heißt: Wenn ich ein Update auf die Datenbanktabelle machen möchte, dann müssen die Attribute die ich verändern möchte
      * hier in diesem Array stehen. Sie sind somit "fillable" also füllbar durch den Endanwender.
      * Referenziere: https://laravel.com/docs/11.x/eloquent#mass-assignment
      * @var array<int, string>
      */
     protected $fillable = [
         'name',
+        'vorname',
+        'nachname',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
