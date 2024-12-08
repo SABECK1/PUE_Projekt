@@ -15,12 +15,12 @@
         $headers = [
             ['key' => 'id', 'label' => '#'],
             ['key' => 'nachname', 'label' => 'Vorname'],
-            ['key' => 'vorname', 'label' => 'Nachname'] # <---- nested attributes
+            ['key' => 'vorname', 'label' => 'Nachname'],
+            ['key' => 'initial_password', 'label' => 'Initialpasswort']
         ];
     @endphp
 
     @if($users and !$table_hidden)
-{{--        {{dd($users)}}--}}
         <x-table :headers="$headers" :rows="$users" with-pagination />
     @endif
 </div>

@@ -9,7 +9,7 @@ use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
-use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Str;
 use App\Http\Controllers\PaginationController;
 
 class CSVUpload extends Component
@@ -30,9 +30,16 @@ class CSVUpload extends Component
 
     public function render()
     {
+        $created_users = [];
 
         $page_controller = new PaginationController();
-        $created_users = User::find($this->created_users);
+        foreach ($this->created_users as $user) {
+
+                $db_user = User::find($user['id']);
+                // Initialpassword ans Frontend geben
+                $db_user->initial_password = $user['password'];
+                $created_users[] = $db_user;
+        }
         $users = $page_controller->index($created_users);
         return view('livewire.c-s-v-upload', compact('users'));
     }
@@ -42,16 +49,20 @@ class CSVUpload extends Component
         //CSV auslesen und User erstellen
         if (($handle = fopen($this->file->path(), 'r')) !== false) {
             while (($row = fgetcsv($handle, null, ";")) !== false) {
+                $initial_password = 'BBS_Einbeck'.Str::random(10);
                 $created_user = User::create([
                     'nachname' => $row[0],
                     'vorname' => $row[1],
-                    'email' => bin2hex(random_bytes(5 / 2)),#$row[2],
+                    'email' => $row[2],
                     'name' => $row[0]." ".$row[1],
                     'role_id' => Role::ROLE_STANDARD,
-                    'password' => 'TEST'#bin2hex(random_bytes(5 / 2))
-                    // Add other fields as needed
+                    'password' => $initial_password
+                    // Andere Felder hier hinzufügen
                 ]);
-                $this->created_users[] = $created_user->id;
+                $this->created_users[] = [
+                    'id' => $created_user->id,
+                    'password' => $initial_password // Verwendung des vollständigen Namens als Benutzernamen
+                ];
             }
             fclose($handle);
         }
