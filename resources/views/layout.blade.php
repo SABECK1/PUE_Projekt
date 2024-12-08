@@ -28,14 +28,14 @@
     <x-slot:sidebar drawer="main-drawer"  class="bg-base-200">
         <x-menu activate-by-route>
             <x-menu-item title="Umfragen anzeigen" icon="c-rectangle-group" link="{{ route('showSurveys') }}"/>
+{{--            @if ($user->role_id == \App\Models\Role::ROLE_ADMIN)--}}
             <x-menu-item title="Umfragen erstellen" icon="m-pencil" link="{{route('createSurveys') }}"/>
             <x-menu-item title="Umfragen auswerten" icon="o-calculator" link="{{ route('evaluateSurveys') }}"/>
-            @if ($userRole == 1)
                 <x-menu-sub title="Einstellungen" icon="o-cog-6-tooth">
                     <x-menu-item title="Benutzer-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
                     <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
                 </x-menu-sub>
-            @endif
+{{--            @endif--}}
         </x-menu>
     </x-slot:sidebar>
     <x-slot:content>
