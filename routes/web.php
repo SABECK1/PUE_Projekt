@@ -43,7 +43,7 @@ Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->middleware
 
 //Authentication
 Route::get('/login', \App\Livewire\Login::class)->name('login');
-Route::get('/register', [RegisterController::class, 'create'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
+//Route::get('/register', [RegisterController::class, 'create'])->name('register');
+//Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
 
 
