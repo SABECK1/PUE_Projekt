@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             // Check if the user is authenticated
-            $userRole = Auth::check() ? Auth::user()->role : 3; // -----CHANGE----- Schüler ohne rolle, Lehrer == 1, Personaler == 2, Admin == 3
+            $userRole = Auth::check() ? Auth::user()->role : 1; // -----CHANGE----- Schüler ohne rolle, Lehrer == 1, Personaler == 2, Admin == 3
             $view->with('userRole', $userRole);
         });
 

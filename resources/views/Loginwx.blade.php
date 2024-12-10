@@ -23,7 +23,7 @@
                                     <x-input type="email" label="E-mail" wire:model="email" class="border-black" required/>
                                 </div>
                                 <div class="mb-6">
-                                    <x-password label="Password" wire:model="password" only-password class="border-black" required/>
+                                    <x-input type="password" label="Password" wire:model="password" only-password class="border-black" required/>
                                 </div>
                                 <button type="submit" icon="o-check" class="w-full px-4 py-2 text-black bg-yellow-400 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-black-700 focus:ring-offset-2">
                                     Login

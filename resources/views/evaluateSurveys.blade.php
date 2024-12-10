@@ -4,7 +4,7 @@
 
     @php
 
-        $users = App\Models\User::take(5)->get();
+        $users = App\Models\User::get();
        
 
         // Bestimme das Icon basierend auf dem Wert von "Vorjahreswert"
