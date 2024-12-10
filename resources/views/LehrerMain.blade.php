@@ -4,6 +4,11 @@
 @section('content')
 @php
 
+    $surveys = [
+            ['id'=> 1,'class' => 'Customer Satisfaction', 'date' => '2024-01-15', 'status' => 'Completed'],
+            ['id'=> 1,'class' => 'Employee Feedback', 'date' => '2024-02-10', 'status' => 'In Progress'],
+            ['id'=> 1,'class' => 'Market Research', 'date' => '2024-03-05', 'status' => 'Pending'],
+        ];
     
     $icon = 'm-minus-small'; 
     $anzahl = 4;
@@ -111,6 +116,7 @@
         <!-- Tables -->
         <div class="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8">
             <!-- Top Customers -->
+            <!-- die oben Geschriebene Survey demo is nur platzhalter damit die page funktioniert-->
             <x-card class="shadow-md" title="Zufriedene Klassen">
                 <x-list-item :item="$surveys" separator hover> 
                         <x-slot:value>
@@ -125,6 +131,7 @@
             <!-- Should pull the item, in which the class and the overall 
                 satisfaction value of the registered teacher is indicated. 
                 Of course in the context that the teacher also teaches these classes-->
+            <!-- die oben Geschriebene Survey demo is nur platzhalter damit die page funktioniert-->
             <x-card class="shadow-md" title="Unzufriedene Klassen" >
                 <x-list-item :item="$surveys" separator hover> 
                     <x-slot:value>
@@ -138,7 +145,7 @@
             
         </div>
 
-        <!-- running surveys Table -->
+        <!-- Newest surveys Table -->       
         <div class="mt-6 bg-white p-6 rounded-lg shadow-md" >
             <x-card title="Recent Surveys" >
                 <livewire:u-i-table></livewire:u-i-table>         

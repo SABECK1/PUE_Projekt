@@ -40,6 +40,7 @@
                     <x-menu-item title="Benutzer-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
                     <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('questionnaire') }}"/>
                 </x-menu-sub>
+            @endif
 {{--            @endif--}}
         </x-menu>
     </x-slot:sidebar>

@@ -21,6 +21,10 @@ class PagesController extends Controller
         return view('surveyData');
     }
 
+    public function Loginwx() {
+        return view('Loginwx');
+    }
+
     public function showSurvey(Survey $survey) {
         return view('survey', ['survey' => $survey, 'user' => Auth::user()]);
     }
@@ -59,6 +63,10 @@ class PagesController extends Controller
 
     public function dashboard() {
         return view('dashboard');
+    }
+    
+    public function LehrerMain() {
+        return view('LehrerMain');
     }
 
     public function questionnaire() {
