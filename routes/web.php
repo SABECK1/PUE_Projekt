@@ -31,7 +31,6 @@ use \App\Http\Controllers\LoginController;
 //Zum Testen ohne Auth
 Route::get('/user', [PagesController::class, 'showUser'])->name('userPage');
 Route::get('/userverwaltung', [PagesController::class, 'showUsers'])->name('userPage');
-Route::get('/', [PagesController::class, 'showSurveys'])->name('showSurveys');
 Route::get('/show/data', [PagesController::class, 'showSurveyData'])->name('showSurveyData');
 Route::get('/show/survey', [PagesController::class, 'showSurvey'])->name('showSurvey');
 Route::get('/evaluateSurveys', [PagesController::class, 'evaluateSurveys'])->name('evaluateSurveys');
@@ -39,10 +38,12 @@ Route::get('/evaluateSurvey', [PagesController::class, 'evaluateSurvey'])->name(
 Route::get('/evaluate/data{survey}', [PagesController::class, 'evaluateSurveyData'])->name('evaluateSurveyData');
 Route::get('/createSurvey', [PagesController::class, 'createSurveys'])->name('createSurveys');
 
-
+Route::get('/', [PagesController::class, 'Loginwx'])->name('Loginwx');
+Route::get('/LehrerMain', [PagesController::class, 'LehrerMain'])->name('LehrerMain');
+Route::get('/showSurveys', [PagesController::class, 'showSurveys'])->name('showSurveys');
 
 //Authentication
-Route::get('/login', \App\Livewire\Login::class)->name('login');
+Route::get('/Login', \App\Livewire\Login::class)->name('Login');
 //Route::get('/register', [RegisterController::class, 'create'])->name('register');
 //Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
 
