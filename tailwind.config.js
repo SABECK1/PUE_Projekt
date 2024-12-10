@@ -3,13 +3,16 @@ import daisyui from 'daisyui'
 export default {
     content: [
         // You will probably also need these lines
+        './storage/framework/views/*.php',
         "./resources/**/**/*.blade.php",
         "./resources/**/**/*.js",
         "./app/View/Components/**/**/*.php",
         "./app/Livewire/**/**/*.php",
 
         // Add mary
-        "./vendor/robsontenorio/mary/src/View/Components/**/*.php"
+        "./vendor/robsontenorio/mary/src/View/Components/**/*.php",
+        //Paginator
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php'
     ],
     theme: {
         extend: {},

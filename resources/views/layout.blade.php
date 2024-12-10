@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
     <title>Dashboard</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/js/app.js')
+{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 </head>
 @php
     include_once resource_path('helpers/diffRoleAction.php');
@@ -31,6 +32,7 @@
     <x-slot:sidebar drawer="main-drawer"  class="bg-base-200">
         <x-menu activate-by-route>
             <x-menu-item title="Umfragen anzeigen" icon="c-rectangle-group" link="{{ route('showSurveys') }}"/>
+{{--            @if ($user->role_id == \App\Models\Role::ROLE_ADMIN)--}}
             <x-menu-item title="Umfragen erstellen" icon="m-pencil" link="{{route('createSurveys') }}"/>
             <x-menu-item title="Umfragen auswerten" icon="o-calculator" link="{{ route('evaluateSurveys') }}"/>
             @if ($userRole == 3)
@@ -38,7 +40,7 @@
                     <x-menu-item title="Benutzer-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
                     <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('questionnaire') }}"/>
                 </x-menu-sub>
-            @endif
+{{--            @endif--}}
         </x-menu>
     </x-slot:sidebar>
     <x-slot:content>
