@@ -44,6 +44,7 @@ Route::get('/Loginwx', [PagesController::class, 'Loginwx'])->name('Loginwx');
 Route::get('/LehrerMain', [PagesController::class, 'LehrerMain'])->name('LehrerMain');
 Route::get('/', [PagesController::class, 'LehrerMain'])->name('LehrerMain');
 Route::get('/showSurveys', [PagesController::class, 'showSurveys'])->name('showSurveys');
+Route::get('/questionnaire', [PagesController::class, 'questionnaire'])->name('questionnaire');
 
 Route::get('/Logout', [LogoutController::class, 'logout'])->name('logout');
 
