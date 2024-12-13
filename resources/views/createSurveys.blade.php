@@ -1,20 +1,21 @@
 @extends('layout')
 
 @section('content')
-<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/anchor@3.x.x/dist/cdn.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@php
+    $questionnaire = App\Models\Questionnaire::get();
+    $classes = App\Models\SchoolClass::get();
+@endphp
+@foreach($classes as $class)
+@endforeach
     <x-form wire:submit="save">
         <x-header title="Umfrage erstellen"  separator/>
         <div class="grid lg:grid-cols-4 gap-6 lg:gap-8 mt-6 flex-wrap " >
             <!--Klassen eingabe-->
-            <x-input label="Klasse" wire:model="klasse" placeholder="Klasse angeben" clearable required
-                 class="input input-bordered input-warning w-full max-w-xs"/>
+            <x-select label="Klasse" wire:model="Klasse" :options="$classes" icon="o-user" class="select-warning" placeholder="Klasse angeben"  clearable required />
                  <!--Jahrgang Auswahl-->
-            <x-select label="Schuljahr" icon="s-academic-cap"  wire:model="selectedUser" placeholder="Jahrgang auswählen" clearable required
-            class="select-warning"/>
+            <x-select label="Schuljahr" wire:model="year" icon="s-academic-cap" class="select-warning"  placeholder="Jahrgang auswählen" clearable required />
             <!-- Fragenkatalog Auswahl-->
-            <x-select label="Fragenkatalog" icon="s-document-text"  wire:model="selectedUser" placeholder="Fragenkatalog auswählen" clearable required
-            class="select-warning"/>
+            <x-select label="Fragenkatalog" wire:model="questionnaire" :options="$questionnaire" icon="s-document-text" class="select-warning"  placeholder="Fragenkatalog auswählen" clearable required />
         </div>
 
         <x-textarea label="Notizen" wire:model="notizen" hint="Max. 1000 Zeichen (Optional)" rows="5"/>
