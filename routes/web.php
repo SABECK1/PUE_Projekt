@@ -5,6 +5,8 @@ use App\Models\Survey;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PagesController;
 use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\Auth\LogoutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,13 +40,16 @@ Route::get('/evaluateSurvey', [PagesController::class, 'evaluateSurvey'])->name(
 Route::get('/evaluate/data{survey}', [PagesController::class, 'evaluateSurveyData'])->name('evaluateSurveyData');
 Route::get('/createSurvey', [PagesController::class, 'createSurveys'])->name('createSurveys');
 
-Route::get('/', [PagesController::class, 'Loginwx'])->name('Loginwx');
+Route::get('/Loginwx', [PagesController::class, 'Loginwx'])->name('Loginwx');
 Route::get('/LehrerMain', [PagesController::class, 'LehrerMain'])->name('LehrerMain');
+Route::get('/', [PagesController::class, 'LehrerMain'])->name('LehrerMain');
 Route::get('/showSurveys', [PagesController::class, 'showSurveys'])->name('showSurveys');
+
+Route::get('/Logout', [LogoutController::class, 'logout'])->name('logout');
 
 //Authentication
 Route::get('/Login', \App\Livewire\Login::class)->name('Login');
-//Route::get('/register', [RegisterController::class, 'create'])->name('register');
-//Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
 
 

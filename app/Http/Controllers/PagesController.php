@@ -17,12 +17,8 @@ class PagesController extends Controller
         return view('showSurveys', ['surveys' => $surveys, 'user' => Auth::user()]);
     }
 
-    public function showSurveyData() {
-        return view('surveyData');
-    }
-
-    public function Loginwx() {
-        return view('Loginwx');
+    public function showSurveyData() {       
+        return view('showSurveyData');
     }
 
     public function showSurvey(Survey $survey) {

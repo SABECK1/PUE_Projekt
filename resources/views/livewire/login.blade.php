@@ -1,5 +1,5 @@
 <div>
-<div class="md:w-96 mx-auto mt-20">
+<div class="md:w-96 mx-auto mt-20 p-8 shadow-2xl rounded-md">
     <div class="mb-10 flex justify-center items-center">
         <img src="{{ asset('logo_BBS_Einbeck.png') }}" alt="Logo" class="h-16 w-auto"/>
     </div>

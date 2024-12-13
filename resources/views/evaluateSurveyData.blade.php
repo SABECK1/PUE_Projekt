@@ -2,21 +2,14 @@
 
 @section('content')
     @php
-
-        // Retrieve and decode the 'survey' parameter from the URL
-           $survey = null;
-        if (request()->query('survey'))
-        {
-            // Retrieve and decode the 'survey' parameter from the URL
-            $survey = json_decode(urldecode(request()->query('survey')), true); // Decode and convert to an array
-        }
+        $survey = App\Models\Survey::Where('id', $_GET['survey'])->get()->toArray();
         include_once resource_path('helpers/diffRoleAction.php');
         $value = rand(1, 100);
         $colour = calculateBewertungColour($value);
     @endphp
     <!-- der value wert soll aus einer funktion gezogen werden, welche diesen aus den antworten der survey fragen berechnet.-->
     @if ($survey)
-    <x-header title=" {{ $survey['class'] }}"></x-header>
+    <x-header title=" {{ $survey['surveycode'] }}"></x-header>
     <!--foreach Fragen ergebnis in wert-->
         <x-card title="Frage: Nummer(ID)" class="shadow-md">
             <div class="flex flex-cols-2 space-y-4 md:flex-row md:items-center md:space-x-6 my-4">

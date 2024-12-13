@@ -10,15 +10,12 @@
             <x-slot:value>
                 {{ $survey['surveycode']." - ".$survey->school_class->name }}
             </x-slot:value>
-
             <x-slot:sub-value>
                 {{ $survey['created_at'] }}
             </x-slot:sub-value>
             <x-slot:actions>
                 <x-button icon="c-arrow-turn-right-up" class="text-red-500"
-                          link="{{ route('evaluateSurveyData', [
-                              'survey' => $survey
-                          ]) }}" />
+                          link="{{ route('showSurveyData', ['survey' => $survey]) }}" />
             </x-slot:actions>
         </x-list-item>
     @endforeach
