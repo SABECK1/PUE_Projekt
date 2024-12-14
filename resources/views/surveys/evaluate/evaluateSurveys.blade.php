@@ -5,7 +5,7 @@
     @php
 
         $users = App\Models\User::get();
-       
+
 
         // Bestimme das Icon basierend auf dem Wert von "Vorjahreswert"
         $icon = 'm-arrow-right'; // Standardwert bei Gleichheit
@@ -41,7 +41,7 @@
         </x-slot:sub-value>
         <x-slot:actions>
             <x-button icon="c-arrow-turn-right-up" class="text-red-500"
-                      link="{{ route('evaluateSurveyData', ['survey' => $survey]) }}" />
+                      :link="route('evaluateSurvey',  $survey)" />
         </x-slot:actions>
     </x-list-item>
     @endforeach

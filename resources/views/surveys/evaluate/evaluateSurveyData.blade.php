@@ -3,7 +3,6 @@
 @section('content')
     @php
         $survey = App\Models\Survey::Where('id', $_GET['survey'])->get()->toArray();
-        include_once resource_path('helpers/diffRoleAction.php');
         $value = rand(1, 100);
         $colour = calculateBewertungColour($value);
     @endphp
@@ -16,7 +15,7 @@
             <div class="col-span-1 text-pretty">
                 <!--Die Frage.  event. {{-- $survey['frageInhalt'] --}}-->
                 Inhalt der Frage ############## ############ ####### ######## ########## ########### ################ ####### ################
-            </div> 
+            </div>
             <x-progress id="ranking1" value="{{$value}}" max="100" class="h-6 {{$colour}}"/>
             <label for="ranking1" class="text-lg font-semibold text-gray-700">{{$value}}%</label>
             </div>
