@@ -6,7 +6,7 @@
 
 
         <x-slot:actions>
-            <x-button label="Erstellen" type="submit"/>
+            <x-button label="Erstellen" type="submit" class="btn-primary"/>
         </x-slot:actions>
 
     </x-form>

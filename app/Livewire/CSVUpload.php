@@ -46,6 +46,8 @@ class CSVUpload extends Component
 
     public function save()
     {
+        $this->validate();
+
         //CSV auslesen und User erstellen
         if (($handle = fopen($this->file->path(), 'r')) !== false) {
             while (($row = fgetcsv($handle, null, ";")) !== false) {
