@@ -2,20 +2,35 @@
 
 @section('content')
     @php
-        // Retrieve and decode the 'survey' parameter from the URL
-           $survey = null;
-        if (request()->query('survey'))
-        {
-            // Retrieve and decode the 'survey' parameter from the URL
-            $survey = json_decode(urldecode(request()->query('survey')), true); // Decode and convert to an array
-        }
+        $questions = App\Models\SurveyQuestion::whereIn('id', function($query) {
+            $query->select('survey_question_id')
+                ->from('questionnaire_survey_question')
+                ->whereIn('questionnaire_id', function($query) {
+                    $query->select('questionnaire_id')
+                        ->from('surveys')
+                        ->where('id', $_GET['survey']);
+                });
+        })->get()->toArray();
+        $survey = App\Models\Survey::Where('id', $_GET['survey'])->select('surveycode')->get();
+        $i = 0;
     @endphp
-    @if ($survey)
-        <x-card title=" {{ $survey['class'] }}">
-            Das hier ist der Code für die Umfrage
-            <x-slot:figure>
-              <img src="https://picsum.photos/500/200" /> {{--  QRCode--}}
-            </x-slot:figure>
-        </x-card>
+    @foreach($survey as $surv)
+    @endforeach
+    @if ($questions)<!--Hier ein foreach um für jede frage in der survey eine card zu erstellen. Jetzt noch nicht eingebaut da noch keine Survey tabelle mit Question (Id) zeile existiert.-->
+        <x-card title="{{$surv['surveycode']}}">
+             Hier Werden die Fragen der Umfrage angezeigt. Um zur bewertung zu gelangen bitte zur auswertung wechseln.
+            <x-button icon="c-arrow-turn-right-up" class="text-red-500" link="{{ route('evaluateSurveys') }}" />
+        </x-card>     
     @endif
+
+    @foreach($questions as $i => $question)       
+    <x-card title=" Question Nr. {{ $i + 1 }}" class=" shadow-md mb-2 flex mx-10"  separator>
+        <div class="grid lg:grid-cols-4 gap-6 lg:gap-8">
+            <div class="col-span-3 text-pretty">
+                <!--Die Frage.  event. {{-- $survey['frageInhalt'] --}}-->
+                {{$question['question']}}
+            </div>      
+        </div>
+    </x-card>
+@endforeach
 @endsection
