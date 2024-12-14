@@ -37,7 +37,7 @@ Route::get('/userverwaltung', [UserController::class, 'showUsers'])->middleware(
 
 
 //#################Authentication#################
-Route::get('/Login', Login::class)->name('Login');
+Route::get('/Login', Login::class)->name('login');
 //Route::get('/register', [RegisterController::class, 'create'])->name('register');
 //Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
 Route::get('/Logout', [LogoutController::class, 'logout'])->name('logout');
