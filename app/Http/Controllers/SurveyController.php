@@ -42,4 +42,16 @@ class SurveyController extends Controller
         return view('surveys.create.createSurveys', ['classes' => SchoolClass::all(), 'user' => Auth::user()]);
     }
 
+    public static function calculateRatingColor(int $value)
+    {
+        //Übernommen von Juris Code -> Benötigt u.a. für die View evaluateSurveyData
+        if (0 <= $value && $value < 33) {
+            return 'progress-error';
+        } elseif (33 < $value && $value < 66) {
+            return 'progress-warning';
+        } else {
+            return 'progress-success';
+        }
+    }
+
 }
