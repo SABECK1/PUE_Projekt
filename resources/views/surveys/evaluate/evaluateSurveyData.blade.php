@@ -1,9 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <!-- der value wert soll aus einer funktion gezogen werden, welche diesen aus den antworten der survey fragen berechnet.-->
-    @if ($survey)
-    <x-header title=" {{ $survey->surveycode }}"></x-header>
+    <livewire:survey-header :survey="$survey"></livewire:survey-header>
     <!--foreach Fragen ergebnis in wert-->
     @foreach($questions as $question)
         <x-card title="Frage: {{$question->question}}" class="shadow-md">
@@ -31,6 +29,5 @@
 
         </x-card>
     @endforeach
-    @endif
-    <x-button label="Als PDF drucken" class="btn-warning mx-10" icon="o-check" disabled />
+
 @endsection
