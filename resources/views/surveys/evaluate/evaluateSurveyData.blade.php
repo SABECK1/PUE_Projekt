@@ -8,8 +8,6 @@
     @foreach($questions as $question)
         <x-card title="Frage: {{$question->question}}" class="shadow-md">
             <div class="flex flex-cols-2 space-y-4 md:flex-row md:items-center md:space-x-6 my-4">
-{{--                Anzahl Antworten--}}
-
                 @php
 //              Anzahl Antworten für jede Option
                 $counts = $question->answers()
