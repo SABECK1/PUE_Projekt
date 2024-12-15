@@ -22,7 +22,7 @@ class SurveyAnswerFactory extends Factory
             ->where('surveys.id', '=', $chosen_survey)
             ->pluck('survey_question_id');
         return [
-            'chosen_answer' => $this->faker->numberBetween(1, 5),
+            'chosen_answer' => $this->faker->numberBetween(1, 4),
             'survey_id' => $chosen_survey,
             'survey_question_id' => $this->faker->randomElement($questions_in_survey),
         ];

@@ -29,11 +29,12 @@ class SurveyController extends Controller
     {
 
         $questionnaire = $survey->questionnaire()->with('questions')->first();
-        $questions = $questionnaire->questions()->with('answers')->get();
+        $questions = $questionnaire->questions()->with('answers')->withCount('answers')->get();
 //        $answers = $questions->answers()->get();
         return view('surveys.evaluate.evaluateSurveyData', ['survey' => $survey,
             'questionnaire' => $questionnaire,
             'questions' => $questions,
+//            'answers' => $answers,
             'user' => Auth::user()]);
     }
 
