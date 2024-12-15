@@ -26,13 +26,13 @@
     <x-slot:sidebar drawer="main-drawer"  class="bg-base-200">
         <x-menu activate-by-route>
             <x-menu-item title="Dashboard" icon="o-home" link="{{ route('dashboard') }}"/>
-            <x-menu-item title="Umfragen anzeigen" icon="c-rectangle-group" link="{{ route('showSurveys') }}"/>
-            <x-menu-item title="Umfragen erstellen" icon="m-pencil" link="{{route('createSurveys') }}"/>
-            <x-menu-item title="Umfragen auswerten" icon="o-calculator" link="{{ route('evaluateSurveys') }}"/>
+            <x-menu-item title="Umfragen anzeigen" icon="o-eye" link="{{ route('showSurveys') }}"/>
+            <x-menu-item title="Umfragen erstellen" icon="o-plus-circle" link="{{route('createSurveys') }}"/>
+            <x-menu-item title="Umfragen auswerten" icon="o-chart-bar" link="{{ route('evaluateSurveys') }}"/>
 
                 <x-menu-sub title="Einstellungen" icon="o-cog-6-tooth">
-                    <x-menu-item title="Benutzer-Verwaltung" icon="o-home" link="{{ route('userPage') }}"/>
-                    <x-menu-item title="Fragenbogen-Verwaltung" icon="o-home" link="{{ route('questionnaire') }}"/>
+                    <x-menu-item title="Benutzer-Verwaltung" icon="o-user-group"  link="{{ route('userPage') }}"/>
+                    <x-menu-item title="Fragenbogen-Verwaltung" icon="o-document-text" link="{{ route('questionnaire') }}"/>
                 </x-menu-sub>
         </x-menu>
     </x-slot:sidebar>
