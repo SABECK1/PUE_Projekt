@@ -1,9 +1,12 @@
-
-    <x-header title=" {{ $survey->surveycode }}">
-        <x-slot:actions>
-            <x-button label="Als PDF drucken" class="btn-warning mx-10" icon="o-check"  />
-        </x-slot:actions>
-    </x-header>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>"PDF"</title>
+</head>
+<body>
     <!--foreach Fragen ergebnis in wert-->
     @foreach($questions as $question)
         <x-card title="Frage: {{$question->question}}" class="shadow-md">
@@ -31,3 +34,5 @@
 
         </x-card>
     @endforeach
+</body>
+</html>
