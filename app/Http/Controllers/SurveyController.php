@@ -16,7 +16,12 @@ class SurveyController extends Controller
 
     public function showSurvey(Survey $survey)
     {
-        return view('surveys.show.showSurveyData', ['survey' => $survey, 'user' => Auth::user()]);
+        $questionnaire = $survey->questionnaire()->with('questions')->first();
+        $questions = $questionnaire->questions()->get();
+        return view('surveys.show.showSurveyData', ['survey' => $survey,
+                                                            'user' => Auth::user(),
+                                                            'questionnaire' => $questionnaire,
+                                                            'questions' => $questions,]);
     }
 
     public function evaluateSurveys()
