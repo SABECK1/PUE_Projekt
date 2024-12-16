@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\UserController;
@@ -42,4 +43,7 @@ Route::get('/Login', Login::class)->name('login');
 //Route::post('/register', [RegisterController::class, 'store'])->name('register_store');
 Route::get('/Logout', [LogoutController::class, 'logout'])->name('logout');
 
+
+//#################PDF-Generator#################
+Route::get('/generateEvaluation/{survey}', [PDFController::class, 'generateEvaluationPDF'])->middleware('auth')->name('generateEvaluationPDF');
 
